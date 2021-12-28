@@ -1,0 +1,1 @@
+echo $([[ -f $DATA ]] && echo "file") || echo $([[ -e $DATA ]] && echo "file") || echo "?"

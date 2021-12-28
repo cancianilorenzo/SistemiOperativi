@@ -1,0 +1,18 @@
+//==========
+Esercizi Bash
+//==========
+Scrivere delle sequenze di comandi (singola riga da eseguire tutta in blocco) che 
+utilizzano come “input” il valore della variabile DATA per:
+1. Stampa “T” (per True) o “F” (per False) a seconda che il valore rappresenti un 
+file o cartella esistente
+2. Stampa “file”, “cartella” o “?” a seconda che il valore rappresenti un file 
+(esistente), una cartella (esistente) o una voce non presente nel file-system
+3. Stampa il risultato di una semplice operazione aritmetica contenuta nel file 
+indicato dal valore oppure “?” se il file non esiste
+//==========
+Esercizi Scripting
+//==========
+4. Scrivere uno script che dato un qualunque numero di argomenti li restituisca in 
+output in ordine inverso.
+5. Scrivere uno script che mostri il contenuto della cartella corrente in ordine 
+inverso rispetto all’output generato da “ls” (che si può usare ma senza opzioni)

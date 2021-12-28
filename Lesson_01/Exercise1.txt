@@ -1,0 +1,1 @@
+[[ -e $DATA ]] && echo "T" || echo "F"
