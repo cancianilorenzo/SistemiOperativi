@@ -1,0 +1,4 @@
+DATA=file.txt
+1. [[ -f $DATA ]] || [[ -d $DATA ]] && echo "T" || echo "F"
+2. [[ -f $DATA ]] && echo "file" || [[ -d $DATA ]] && echo "cartella" || echo "?"
+3. [[ -f $DATA ]] && echo $(($(cat $DATA))) || echo "?"

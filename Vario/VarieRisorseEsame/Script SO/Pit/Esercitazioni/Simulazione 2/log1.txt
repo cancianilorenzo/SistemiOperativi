@@ -1,0 +1,3 @@
+Thread iniziato con segnale 10
+Inviati messaggi!
+Ripristinati figli attivi = 0!

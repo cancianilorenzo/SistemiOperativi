@@ -1,0 +1,4 @@
+alias linecount='echo $( read data; if [[ ! -f data ]]; echo "Il file non esiste" fi; )'
+
+
+alias linecount='read filename; [[ -f "${filename}" ]] && ( cat "${filename}" | wc -l ) || echo "?File not found" 1>&2'

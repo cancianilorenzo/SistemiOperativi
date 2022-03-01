@@ -1,0 +1,61 @@
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <signal.h>
+#include <pthread.h>
+#include <errno.h>
+#include <sys/wait.h>
+
+#define LETTURA 0
+#define SCRITTURA 1
+
+int main(int argc, char **argv){
+
+    int fd_1[2]; //figlio legge
+    int fd_2[2]; //padre legge
+    printf("[PADRE] %d\n", getpid());
+
+    pipe(fd_1); pipe(fd_2);
+    
+
+    int processo = fork();
+
+    if(processo==0){
+        int i = 1;
+        close(fd_2[LETTURA]);
+        close(fd_1[SCRITTURA]);
+        while(1){
+            char buffer[100];
+            if(i==5){
+                write(fd_2[SCRITTURA], "papa", strlen("papa"));
+            }else{
+                write(fd_2[SCRITTURA], "Hello", strlen("Hello"));
+            }
+            //sleep(1);
+            read(fd_1[LETTURA], &buffer, 100);
+            if(strcmp("quit", buffer)==0) break;
+            printf("[figlio] Ricevuto: %s\n", buffer);
+            i++;
+        }
+    }else{
+        close(fd_1[LETTURA]);
+        close(fd_2[SCRITTURA]);
+        char buffer[100];
+        while(1){
+            memset(buffer, 0, 100);
+            int ricevuto = read(fd_2[LETTURA], &buffer, 100);
+            printf("ricevuto: %s (%d)\n", buffer, ricevuto);
+            if(strcmp("papa", buffer)==0) break;
+            printf("[padre] Ricevuto: %s\n", buffer);
+            //sleep(1);
+            write(fd_1[SCRITTURA], "Ciao", strlen("Ciao"));
+        }
+        write(fd_1[SCRITTURA], "quit", strlen("quit"));
+    }
+
+return 0;
+}

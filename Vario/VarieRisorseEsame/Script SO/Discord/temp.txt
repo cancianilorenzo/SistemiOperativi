@@ -1,0 +1,3 @@
+a.out
+temp.txt
+wc.c

@@ -1,0 +1,1 @@
+alias feedback='echo "Come ti chiami?"; echo $( read nome; echo "ciao $nome" )'

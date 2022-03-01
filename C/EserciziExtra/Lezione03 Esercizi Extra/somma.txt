@@ -1,0 +1,1 @@
+alias somma='somma=""; read numero; while [[ -n $numero  ]]; do somma=$(($somma+$numero)); read numero; done; echo "La somma è $somma"'

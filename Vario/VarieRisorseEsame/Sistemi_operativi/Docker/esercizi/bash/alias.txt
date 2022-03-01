@@ -1,0 +1,4 @@
+alias somma='somma="0";valore="0";read valore; while [[ -n $valore ]]; do somma=$(( $somma + $valore )); read valore; done; echo "somma is $somma"'
+
+
+alias feedback='(echo "ciao come ti chiami?";read nome; echo "il tuo nome: $nome")'

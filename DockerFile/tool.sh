@@ -1,0 +1,1 @@
+apt update && apt-get install -y nano build-essential && apt-get install psmisc

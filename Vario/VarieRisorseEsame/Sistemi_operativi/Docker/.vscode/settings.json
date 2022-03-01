@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdbool.h": "c",
+        "pthread.h": "c",
+        "signal.h": "c",
+        "errno.h": "c"
+    }
+}
